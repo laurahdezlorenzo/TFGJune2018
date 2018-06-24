@@ -1,0 +1,26 @@
+<tool id="medicmine_annotation" name="GO and Pathways annotation" version="1.0.0" profile="16.04">
+    <description>for data from the different combinations</description>
+    <command> ruby '$__tool_directory__/medicmine_annotation.rb' '$input1' '$input2' '$output1' '$output2' </command>
+    <inputs>
+        <param format="tabular" name="input1" type="data" label="Source file"/>
+        <param name="input2" type="text" label="Introduce the name of the list you are going to create in MedicMine"/>
+    </inputs>
+    <outputs>
+        <data format="tabular" name="output1"/>
+        <data format="tabular" name="output2"/>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input1" value="matrix_all_combinations.txt" />
+            <param name="input2" />
+            <output name="output1" file="medicmine_annotation.output1" />
+            <output name="output2" file="medicmine_annotation.output2" />
+        </test>
+    </tests>
+
+  <help>
+This tool gets annotation based on GO and KEGG Pathways from MedicMine database.
+  </help>
+
+</tool>

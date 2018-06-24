@@ -1,0 +1,22 @@
+<tool id="counter_degs" name="Counts DEGs" version="1.0.0">
+  <description>for each MapMan BIN</description>
+  <command> ruby '$__tool_directory__/counterDEGs.rb' '$input' '$output' </command>
+  <inputs>
+    <param name="input" type="data" format="tabular" label="Input MapMan BINs file"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="counter_degs.input"/>
+      <output name="output" file="counter_degs.output"/>
+    </test>
+  </tests>
+
+  <help>
+This tool counts DEGs in MapMan classification BINs.
+  </help>
+
+</tool>

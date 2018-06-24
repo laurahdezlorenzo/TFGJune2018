@@ -1,0 +1,22 @@
+<tool id="filter_data" name="Filters microarray dataset" version="1.0.0" profile="16.04">
+    <description>for each M.truncatula x E. medicae combination</description>
+    <command> python3 '$__tool_directory__/filter_data.py' '$input' '$output' </command>
+    <inputs>
+        <param format="tabular" name="input" type="data" label="Source file"/>
+    </inputs>
+    <outputs>
+        <data format="tabular" name="output"/>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input" value="parabinga+amp08.txt" />
+            <output name="output" file="filtered_data.txt" />
+        </test>
+    </tests>
+
+  <help>
+This tool filters microarrays data based on its p-value and the FoldChange.
+  </help>
+
+</tool>

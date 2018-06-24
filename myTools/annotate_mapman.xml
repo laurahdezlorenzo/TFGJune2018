@@ -1,0 +1,28 @@
+<tool id="annotate_mapman" name="MapMan BIN annotator" version="1.0.0">
+  <description>with data from the different combinations</description>
+  <command> ruby '$__tool_directory__/annotate_mapman.rb' '$input1' '$input2' '$input3' '$input4' '$output' </command>
+  <inputs>
+    <param name="input1" type="data" format="tabular" label="Input MapMan classification file MSxES:"/>
+    <param name="input2" type="data" format="tabular" label="Input MapMan classification file MSxET:"/>
+    <param name="input3" type="data" format="tabular" label="Input MapMan classification file MTxES:"/>
+    <param name="input4" type="data" format="tabular" label="Input MapMan classification file MTxET:"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="tabular" />
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input1" value="counter_degs1.input"/>
+      <param name="input2" value="counter_degs2.input"/>
+      <param name="input3" value="counter_degs3.input"/>
+      <param name="input4" value="counter_degs4.input"/>
+      <output name="output" file="counter_degs.output"/>
+    </test>
+  </tests>
+
+  <help>
+This tool annotates the BIN name in which each transcript is classified in MapMan.
+  </help>
+
+</tool>
